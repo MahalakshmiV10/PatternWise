@@ -1,0 +1,17 @@
+classDiagram
+    class Observer {
+        <<abstract>>
+        +update(message) None
+    }
+    class Subscriber {
+        +str name
+        +list received_messages
+        +update(message) None
+    }
+    class NewsPublisher {
+        +attach(observer) None
+        +detach(observer) None
+        +publish(message) int
+    }
+    Observer <|-- Subscriber
+    NewsPublisher o-- Observer : notifies

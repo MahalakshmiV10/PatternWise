@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}<h1>Learning Progress</h1>
+<div class="bar"><div id="bar"></div></div>
+<p><b id="s-done">0</b>/8 patterns completed · quiz attempts <b id="s-att">0</b> · best score <b id="s-best">–</b> · last visited: <span id="s-last">none</span></p>
+<ul>{% for p in patterns %}<li>{{ p.name }} <span class="tick" data-tick="{{ p.number }}"></span></li>{% endfor %}</ul>
+<button class="btn alt" id="reset">Reset progress</button>{% endblock %}

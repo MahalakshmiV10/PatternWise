@@ -1,0 +1,20 @@
+classDiagram
+    class Pizza {
+        +str size
+        +str crust
+        +tuple toppings
+        +bool extra_cheese
+        +describe() str
+    }
+    class PizzaBuilder {
+        -str _size
+        -str _crust
+        -list _toppings
+        -bool _extra_cheese
+        +set_size(size) PizzaBuilder
+        +set_crust(crust) PizzaBuilder
+        +add_topping(topping) PizzaBuilder
+        +add_extra_cheese() PizzaBuilder
+        +build() Pizza
+    }
+    PizzaBuilder ..> Pizza : builds

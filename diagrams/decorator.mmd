@@ -1,0 +1,26 @@
+classDiagram
+    class Beverage {
+        <<abstract>>
+        +description() str
+        +cost() int
+    }
+    class Espresso {
+        +description() str
+        +cost() int
+    }
+    class AddOnDecorator {
+        <<abstract>>
+    }
+    class MilkDecorator {
+        +description() str
+        +cost() int
+    }
+    class SugarDecorator {
+        +description() str
+        +cost() int
+    }
+    Beverage <|-- Espresso
+    Beverage <|-- AddOnDecorator
+    AddOnDecorator <|-- MilkDecorator
+    AddOnDecorator <|-- SugarDecorator
+    AddOnDecorator o-- Beverage : wraps

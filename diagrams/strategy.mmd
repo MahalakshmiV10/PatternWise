@@ -1,0 +1,22 @@
+classDiagram
+    class ShippingStrategy {
+        <<abstract>>
+        +calculate_cost(weight_kg) int
+    }
+    class StandardShipping {
+        +calculate_cost(weight_kg) int
+    }
+    class ExpressShipping {
+        +calculate_cost(weight_kg) int
+    }
+    class FreeShipping {
+        +calculate_cost(weight_kg) int
+    }
+    class Order {
+        +set_strategy(strategy) None
+        +shipping_cost() int
+    }
+    ShippingStrategy <|-- StandardShipping
+    ShippingStrategy <|-- ExpressShipping
+    ShippingStrategy <|-- FreeShipping
+    Order o-- ShippingStrategy : uses

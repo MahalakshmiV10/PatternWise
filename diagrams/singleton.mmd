@@ -1,0 +1,10 @@
+classDiagram
+    class AppConfig {
+        -AppConfig _instance$
+        -dict _settings
+        +set_setting(key, value) None
+        +get_setting(key, default) Any
+        +clear_settings() None
+        +reset_instance()$ None
+    }
+    AppConfig --> AppConfig : keeps the only instance

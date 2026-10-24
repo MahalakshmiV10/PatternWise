@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><h1>Master Software Design Patterns.</h1>
+<p>8 patterns, real Python code, real output, diagrams and a quiz. Progress is saved in this browser only.</p>
+<a class="btn" href="/pattern/1">Start Learning</a> <a class="btn alt" href="#patterns">Explore Patterns</a></section>
+<section class="stats"><div class="card"><b id="s-done">0</b>/8 completed</div>
+<div class="card"><b id="s-best">–</b> best quiz score</div>
+<div class="card"><b id="s-att">0</b> quiz attempts</div></section>
+<div class="bar"><div id="bar"></div></div>
+<h2 id="patterns">Explore Patterns</h2>
+<input id="search" placeholder="Search name, category or keyword…" aria-label="Search patterns">
+<div class="grid" id="grid">{% for p in patterns %}
+<a class="card pat" href="/pattern/{{ p.number }}" data-n="{{ p.number }}"
+ data-s="{{ (p.name ~ ' ' ~ p.category ~ ' ' ~ p.purpose ~ ' ' ~ p.use_case)|lower }}">
+<small>{{ p.category }}</small><h3>{{ p.name }} <span class="tick" data-tick="{{ p.number }}"></span></h3><p>{{ p.purpose }}</p></a>{% endfor %}</div>
+<p id="empty" hidden>No patterns match your search.</p>
+{% endblock %}

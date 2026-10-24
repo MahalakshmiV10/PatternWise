@@ -1,0 +1,25 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Editor / OS files
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets (never commit these)
+.env
+*.key
+
+# Build output
+dist/
+build/
+*.egg-info/
+*.zip

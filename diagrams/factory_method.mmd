@@ -1,0 +1,29 @@
+classDiagram
+    class Notification {
+        <<abstract>>
+        +send(message) str
+    }
+    class EmailNotification {
+        +send(message) str
+    }
+    class SmsNotification {
+        +send(message) str
+    }
+    class NotificationService {
+        <<abstract>>
+        +create_notification() Notification
+        +notify(message) str
+    }
+    class EmailService {
+        +create_notification() Notification
+    }
+    class SmsService {
+        +create_notification() Notification
+    }
+    Notification <|-- EmailNotification
+    Notification <|-- SmsNotification
+    NotificationService <|-- EmailService
+    NotificationService <|-- SmsService
+    NotificationService ..> Notification : uses
+    EmailService ..> EmailNotification : creates
+    SmsService ..> SmsNotification : creates

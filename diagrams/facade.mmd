@@ -1,0 +1,21 @@
+classDiagram
+    class Amplifier {
+        +turn_on() str
+        +set_volume(level) str
+        +turn_off() str
+    }
+    class Projector {
+        +turn_on() str
+        +turn_off() str
+    }
+    class StreamingPlayer {
+        +play(title) str
+        +stop() str
+    }
+    class HomeTheaterFacade {
+        +watch_movie(title) list
+        +end_movie() list
+    }
+    HomeTheaterFacade *-- Amplifier
+    HomeTheaterFacade *-- Projector
+    HomeTheaterFacade *-- StreamingPlayer

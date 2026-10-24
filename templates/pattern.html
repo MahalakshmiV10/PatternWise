@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block content %}
+<small>{{ p.category }} · Pattern {{ p.number }} of 8</small><h1>{{ p.name }}</h1>
+<div class="card"><h3>Definition</h3><p>{{ p.purpose }}</p><h3>Real-world analogy</h3><p>{{ p.analogy }}</p>
+<h3>Practical use case</h3><p>{{ p.use_case }}</p></div>
+<h2>Python code</h2><button class="btn alt" id="copy">Copy Code</button>
+<pre class="code" id="code">{{ code }}</pre>
+<h2>Actual output <small>(demo() was really executed by the server)</small></h2><pre class="out">{{ output }}</pre>
+<h2>Class diagram <small>(Mermaid source from diagrams/, shown as text)</small></h2><pre class="out">{{ diagram }}</pre>
+<p><button class="btn" id="complete" data-n="{{ p.number }}">Mark as completed</button></p>
+<p>{% if prev %}<a class="btn alt" href="/pattern/{{ prev.number }}">← {{ prev.name }}</a>{% endif %}
+{% if next %}<a class="btn alt" href="/pattern/{{ next.number }}">{{ next.name }} →</a>{% endif %}</p>
+{% endblock %}

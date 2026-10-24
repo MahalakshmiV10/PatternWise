@@ -1,0 +1,13 @@
+classDiagram
+    class CelsiusSensor {
+        <<abstract>>
+        +get_temperature_celsius() float
+    }
+    class LegacyFahrenheitSensor {
+        +read_fahrenheit() float
+    }
+    class FahrenheitToCelsiusAdapter {
+        +get_temperature_celsius() float
+    }
+    CelsiusSensor <|-- FahrenheitToCelsiusAdapter
+    FahrenheitToCelsiusAdapter --> LegacyFahrenheitSensor : wraps
